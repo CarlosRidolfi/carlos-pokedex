@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Valorax';
+    src: url('../assets/fonts/Valorax-lg25V.otf');
+}
+
+// Index Page Selectors
+
+#pokecontainer:hover {
+    margin-top: -15px;
+    transition: all ease .5s;
+}
+
+#navbar {
+    width: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 40px;
+    background-color: #E40428;
+    margin-bottom: 80px;
+
+    @media (max-width: 600px){
+        margin-bottom: 40px;
+        img {
+            width: 150px;
+        }
+    }
+}
+
+#pokecard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+
+    #pokename {
+        color: #313131;
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: 'Valorax';
+    }
+
+    #pokenumber {
+        color: #919191;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+#buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    column-gap: 40px;
+
+    button {
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 5px;
+        border-radius: 5px;
+        width: 100px;
+        user-select: none;
+    }
+
+    #next {
+        background-color: green;
+        transition: all ease .5s;
+
+        &:hover {
+            color: blue;
+        }
+    }
+
+    #previous {
+        background-color: blue;
+        transition: all ease .5s;
+
+        &:hover {
+            color: green;
+        }
+    }
+}
+
+// Pokemon Page Selectors 
+
+#pokemon-title {
+    font-family: 'Valorax';
+    font-size: 40px;
+    color: black;
+    text-transform: uppercase;
+
+    @media (max-width: 600px){
+        font-size: 30px;
+    }
+}
+
+#pokemon-type {
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#pokemon-card {
+    margin: 0 auto;
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+
+    @media (max-width: 600px){
+        width: 350px;
+    }
+
+    @media (max-width: 400px){
+        width: 280px;
+    }
+}
+
+#stats-table {
+    display: flex;
+    justify-content: start;
+    column-gap: 100%;
+    width: 180px;
+}
+
+#stats {
+    display: flex;
+    margin-bottom: 3px;
+    column-gap: 5px;
+
+    span { 
+        text-transform: uppercase;
+    }
+}
+
+#stats-wrapper {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #30a7d7;
+}
+
+#page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pokedex-button {
+    margin-bottom: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .5s ease-in-out;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
