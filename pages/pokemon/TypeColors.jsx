@@ -1,5 +1,4 @@
 export const HandleTypeColors = (pokemon, changePokeBg) => {
-    console.log('Poke: ',pokemon)
     pokemon.map((type) => {
         if (type.type.name === 'grass')
             changePokeBg('#7AC74C')
