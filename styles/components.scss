@@ -10,6 +10,22 @@
     transition: all ease .5s;
 }
 
+#pokecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #favorite-button {
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 15px;
+        padding: 3px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}
+
 #navbar {
     width: auto;
     padding: 30px;

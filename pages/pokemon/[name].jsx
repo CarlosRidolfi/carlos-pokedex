@@ -18,7 +18,6 @@ const Pokemon = ({pokemon}) => {
     const renderTypes = () => {
         return (
             pokemon.types.map((type) => {
-                console.log(type)
                 return (
                     <li id='pokemon-type' style={{backgroundColor : pokeBg}} key={type.slot}>
                         {type.type.name}

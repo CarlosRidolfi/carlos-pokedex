@@ -1,29 +1,43 @@
 import Layout from "../components/Layout/Layout.jsx";
-import { useState, useEffect } from "react";
+import {useState} from "react";
 import Pokemon from "../components/Pokemon/Pokemon.jsx";
 import React from "react";
 import Link from "next/link.js";
+import Image from "next/image.js";
+import Pokedex from "../assets/images/pokedex.png";
 
-export default function Home({initialPokemon}) {
+export default function Favorites({initialPokemon}) {
     const [pokemon, setPokemon] = useState(initialPokemon)
     const [offset, setOffet] = useState(0)
 
-    const fetchPokemon = async (url, next) => {
-        const response = await fetch(url)
-        const nextPokemon = await response.json()
+    const favoritePokemons = []
 
-        setOffet(next ? offset + 20 : offset - 20)
-        setPokemon(nextPokemon)
+    if (typeof window !== 'undefined') {
+        for (const key in localStorage) {
+            favoritePokemons.push(localStorage.getItem(key))
+        }
     }
 
-    console.log(pokemon.results)
+    const cleanNulls = favoritePokemons.filter((element) => {
+        return element !== null
+    })
+
+    const favoritesParsed = cleanNulls.map((pokemon) => {
+        return JSON.parse(pokemon)
+    })
+
+    console.log(favoritesParsed)
 
     return (                                                             
         <Layout title={"Pokedex"}>
-            <button id='favorite-link'><Link href={"/favorites"}>FAVORITES</Link></button>
+            <Link href='/' data-cy="pokedex-link">
+                    <div id='pokedex-button'>
+                        <Image src={Pokedex} alt='home button' width={90} height={60} />
+                    </div>
+            </Link>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
-                {pokemon.results.map((monster,index) => (
-                    <Pokemon key={index} pokemon={monster} index={index + offset}/>
+                {favoritesParsed.map((pokemon, key) => (
+                    <Pokemon key={key} pokemon={pokemon} index={key}/>
                 ))}
             </div>
 

@@ -10,9 +10,26 @@
     section { 
         margin-bottom: 30px;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         @media (max-width: 300px){
             padding: 0px;
+        }
+
+        #favorite-link {
+            margin-bottom: 30px;
+            font-family: 'Valorax';
+            background-color: purple;
+            border-radius: 5px;
+            padding: 5px;
+            transition: all ease .5s;
+        }
+
+        #favorite-link:hover {
+            background-color: red;
         }
     }
 }

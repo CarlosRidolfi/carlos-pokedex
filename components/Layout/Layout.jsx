@@ -2,6 +2,7 @@ import React from 'react';
 import Head from "next/head";
 import Image from "next/image";
 import LogoImage from "../../assets/images/pokemon-logo.png";
+import Link from 'next/link';
 
 const Layout = ({children, title}) => {
     return (

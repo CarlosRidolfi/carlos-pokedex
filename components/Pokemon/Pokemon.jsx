@@ -3,10 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Pokemon = ({pokemon, index}) => {
+    const [favorite, setFavorite] = React.useState(false)
     const pokeIndex = ('000' + (index + 1)).slice(-3)
+    const pokemonInfo = [pokemon.name, pokeIndex]
+
+    const favortieClick = () => {
+        setFavorite(!favorite);
+        localStorage.setItem("Pokemon " + pokeIndex, `{"name":"${pokemon.name}", "index":"${pokeIndex}"}`);
+    }
 
     return (
         <div id='pokecontainer'>
+            <button id="favorite-button" onClick={() => favortieClick()} style={{ backgroundColor : 'white'}}>Favorite</button>
             <Link href={`/pokemon/${pokemon.name}`}>
                 <a>
                     <div id='pokecard'>
