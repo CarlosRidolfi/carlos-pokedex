@@ -1,6 +1,6 @@
 import Layout from "../components/Layout/Layout.jsx";
 import {useState} from "react";
-import Pokemon from "../components/Pokemon/Pokemon.jsx";
+import FavoritePokemon from "../components/FavoritePokemon/FavoritePokemon.jsx";
 import React from "react";
 import Link from "next/link.js";
 import Image from "next/image.js";
@@ -37,7 +37,7 @@ export default function Favorites({initialPokemon}) {
             </Link>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
                 {favoritesParsed.map((pokemon, key) => (
-                    <Pokemon key={key} pokemon={pokemon} index={key}/>
+                    <FavoritePokemon key={key} pokemon={pokemon} index={key}/>
                 ))}
             </div>
 
