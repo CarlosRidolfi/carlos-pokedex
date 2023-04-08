@@ -14,7 +14,6 @@ const FavoritePokemon = ({pokemon, index}) => {
 
     return (
         <div id='pokecontainer'>
-            <button id="favorite-button" onClick={() => favortieClick()} style={{ backgroundColor : favorite ? 'green' : 'white'}}>Favorite</button>
             <Link href={`/pokemon/${pokemon.name}`}>
                 <a>
                     <div id='pokecard'>
